@@ -11,7 +11,36 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\filexdb.cpp" />
+    <ClCompile Include="include\fxpch.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">fxpch.h</PrecompiledHeaderFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|x64'">fxpch.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <ClCompile Include="src\shell.cpp" />
+    <ClCompile Include="src\collection.cpp" />
+    <ClCompile Include="src\database.cpp" />
+    <ClCompile Include="src\display.cpp" />
+    <ClCompile Include="src\document.cpp" />
+    <ClCompile Include="src\filexdb.cpp">
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(ProjectDir)includes\;$(SolutionDir)Dependency\includes\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(ProjectDir)includes\;$(SolutionDir)Dependency\includes\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <ClCompile Include="src\storage.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\collection.h" />
+    <ClInclude Include="include\database.h" />
+    <ClInclude Include="include\display.h" />
+    <ClInclude Include="include\document.h" />
+    <ClInclude Include="include\filexdb\collection.h" />
+    <ClInclude Include="include\filexdb\database.h" />
+    <ClInclude Include="include\filexdb\display.h" />
+    <ClInclude Include="include\filexdb\document.h" />
+    <ClInclude Include="include\filexdb\storage.h" />
+    <ClInclude Include="include\fxpch.h" />
+    <ClInclude Include="include\storage.h" />
+    <ClInclude Include="include\shell.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
@@ -62,7 +91,9 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)Dependency\includes\;$(SolutionDir)Dependency\includes\python\</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Dependency\includes\;$(SolutionDir)FileXdb\include\</AdditionalIncludeDirectories>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>fxpch.h</PrecompiledHeaderFile>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -79,7 +110,9 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)Dependency\includes\;$(SolutionDir)Dependency\includes\python\</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Dependency\includes\;$(SolutionDir)FileXdb\include\</AdditionalIncludeDirectories>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>fxpch.h</PrecompiledHeaderFile>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>

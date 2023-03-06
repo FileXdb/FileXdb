@@ -1,4 +1,5 @@
-#include "fxpch.h"
+#pragma once
+
 
 namespace FileXdb
 {
