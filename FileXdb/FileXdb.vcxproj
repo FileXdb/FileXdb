@@ -11,7 +11,17 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\collection.cpp" />
+    <ClCompile Include="src\database.cpp" />
+    <ClCompile Include="src\document.cpp" />
     <ClCompile Include="src\filexdb.cpp" />
+    <ClCompile Include="src\storage.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\filexdb\collection.h" />
+    <ClInclude Include="include\filexdb\database.h" />
+    <ClInclude Include="include\filexdb\document.h" />
+    <ClInclude Include="include\filexdb\storage.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
